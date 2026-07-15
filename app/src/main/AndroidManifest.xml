@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    AndroidManifest.xml 是每个 Android 应用的"身份证"
+    它告诉系统：这个应用叫什么、有哪些页面、需要什么权限
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.app1">
+
+    <!--
+        application 节点：定义应用的整体属性
+        android:label="BMI计算器"  → 桌面显示的应用名称
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar" → 界面风格
+    -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="BMI计算器"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+
+        <!--
+            activity 节点：声明一个页面
+            只有一个 MainActivity，就是我们的主页面
+        -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+
+            <!--
+                intent-filter：让这个页面成为"入口页面"
+                系统打开应用时第一个显示的就是这个页面
+            -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+    </application>
+
+</manifest>
